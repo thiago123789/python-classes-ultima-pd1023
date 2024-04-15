@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pet Online</title>
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="col-lg-8 mx-auto p-3 py-md-5">
+            <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                    <span class="fs-4">Pet online</span>
+                </a>
+            </header>
+            <main>
+                <h1>Fale Conosco</h1>
+                <h5>
+                    Em caso de dúvidas entre em contato com {{ nome }} pelo telefone {{ telefone }}
+                </h5>
+                {% if sucesso %}
+                <p class="alert alert-success">Mensagem enviada com sucesso!</p>
+                {% endif %}
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="id_nome">Nome</label>
+                                <input type="text" id="id_nome" class="form-control" name="nome">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="id_email">Email</label>
+                                <input type="email" id="id_email" class="form-control" name="email">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="id_mensagem">Mensagem</label>
+                                <textarea name="mensagem" id="id_mensagem" class="form-control" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+                </form>
+            </main>
+            <footer class="pt-5 my-5 text-muted border-top">
+                Curso python utlima school
+            </footer>
+        </div>
+        <script src="/static/js/bootstrap.bundle.js"></script>
+    </body>
+</html>
