@@ -33,6 +33,7 @@ class Petshop(models.Model):
     rua = models.CharField(verbose_name='Rua', max_length=100)
     numero = models.CharField(verbose_name='Número', max_length=100)
     bairro = models.CharField(verbose_name='Bairro', max_length=50)
+    dono1 = models.CharField(verbose_name='Dono1', max_length=60, blank=False)
 
 
 class ReservaModel(models.Model):
